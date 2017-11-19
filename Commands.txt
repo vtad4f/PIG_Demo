@@ -1,6 +1,6 @@
 pig -x local
 
-Lines = LOAD '/home/training/Downloads/Pig/input.txt' Using PigStorage('\t') AS (word: chararray, chapterCounter: int);
+Lines = LOAD '/home/training/workspace/PIG_UDF/input.txt' Using PigStorage('\t') AS (word: chararray, chapterCounter: int);
 
 AllWords = foreach Lines generate chapterCounter, flatten(TOKENIZE(word)) as word;
 
@@ -16,8 +16,8 @@ Words = Foreach WordsGroup Generate FLATTEN(group) As (word), COUNT(WordsChap.ch
 
 CommonChapWords = Filter Words By (chapterSum == 4);
 
-OrderedWords = Order CommonChapWords By occurrenceSum Desc;
+OrderedWords = Order Words By occurrenceSum Desc;
 
-LimitedWords = Limit OrderedWords 3;
+LimitedWords = Limit OrderedWords 5;
 
 Dump LimitedWords;
