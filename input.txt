@@ -1,0 +1,12 @@
+a,One,One,One,Two,Three,Four,Five	1
+in,Six,Seven,Eight,Nine,Ten	1
+and,One,One,One,Two,Three,Four,Five	2
+Four,Five	2
+Six,Seven,Seven,Eight,Nine,Ten	2
+Eleven,Tweleve,Thirteen	2
+One,Two,Three	3
+Six,Seven,Eight,Nine,Ten	3
+Eleven,Tweleve,Thirteen	3
+One,Two,Three,Three,Three,Four,Five	4
+Six,Seven,Eight	4
+Tweleve,Thirteen	4
