@@ -1,10 +1,10 @@
-# PIG_UDF
+# PIG_Demo
 
 ### Importing Project:
 * Open “eclipse”, right click on “Package Explorer” window, click import.
 * Select “Git”-> “Projects from Git” and click “next”.
 * Select “clone url” and click “next”.
-* Paste “https://github.com/shudipdatta/PIG_UDF.git” in the “url” textbox, Change protocol to “git”, and click “next”. 
+* Paste “https://github.com/shudipdatta/PIG_Demo.git” in the “url” textbox, Change protocol to “git”, and click “next”. 
 * Choose “Import existing project” and click “finish”.
   
 ### General Information (Cloudera):
