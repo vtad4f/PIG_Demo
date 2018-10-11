@@ -22,4 +22,6 @@ LimitedWords = Limit OrderedWords 5;
 
 Dump LimitedWords;
 
+ctrl+z
+
 pig -x local '/home/cloudera/Downloads/PIG_Demo-master/script.pig'
