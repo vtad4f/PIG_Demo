@@ -6,13 +6,6 @@
 * Select “clone url” and click “next”.
 * Paste “https://github.com/shudipdatta/PIG_UDF.git” in the “url” textbox, Change protocol to “git”, and click “next”. 
 * Choose “Import existing project” and click “finish”.
-
-### Referencing libraries:
-* Right click on project and select “build path”-> “configure build path” ->”libraries”->”add external jars”.
-* Go to the directory “File System/usr/lib/hadoop” and select ‘hadoop-common.jar’
-* Go to the directory “File System/usr/lib/hadoop/lib” and select ‘common-logging-1.1.1.jar’
-* Go to the directory “File System/usr/lib/pig” and select ‘pig.jar’
-* Click “Ok”.
   
 ### General Information (Cloudera):
 
