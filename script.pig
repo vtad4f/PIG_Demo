@@ -1,21 +1,23 @@
-Lines = LOAD '/home/cloudera/Downloads/PIG_Demo-master/input.txt' Using PigStorage('\t') AS (word: chararray, chapterCounter: int);
+AllLines = LOAD '/home/cloudera/Downloads/PIG_Demo-master/input.txt' Using PigStorage('\t') AS (line: chararray, chapterCounter: int);
 
-AllWords = foreach Lines generate chapterCounter, flatten(TOKENIZE(word)) as word;
+AllWords = foreach AllLines generate flatten(TOKENIZE(line)) as word, chapterCounter;
 
-FilteredWords = FILTER AllWords BY (LOWER(word) != 'in') AND (LOWER(word) != 'and') AND (LOWER(word) != 'a');
+FilteredWords = FILTER AllWords BY (LOWER(word) != 'ex1') AND (LOWER(word) != 'ex2') AND (word != 'Ex3');
 
 WordsChapGroup = Group FilteredWords By (word, chapterCounter);
 
-WordsChap = Foreach WordsChapGroup Generate FLATTEN(group) As (word,  chapterCounter), COUNT(FilteredWords.chapterCounter) as occurrenceCount;
+WordsChap = Foreach WordsChapGroup Generate FLATTEN(group) As (word,  chapterCounter), COUNT(FilteredWords.chapterCounter) as occurrenceChap;
 
 WordsGroup = Group WordsChap By (word);
 
-Words = Foreach WordsGroup Generate FLATTEN(group) As (word), COUNT(WordsChap.chapterCounter) As chapterSum, SUM(WordsChap.occurrenceCount) As occurrenceSum;
+WordsFinal = Foreach WordsGroup Generate FLATTEN(group) As (word), COUNT(WordsChap.chapterCounter) As chapterTotal, SUM(WordsChap.occurrenceChap) As occurrenceTotal;
 
-CommonChapWords = Filter Words By (chapterSum == 4L);
+CommonChapWords = Filter WordsFinal By (chapterTotal == 3L);
 
-OrderedWords = Order CommonChapWords By occurrenceSum Desc;
+OrderedWords = Order CommonChapWords By occurrenceTotal Desc;
 
-LimitedWords = Limit OrderedWords 5;
+LimitedWords = Limit OrderedWords 3;
+
+Dump LimitedWords;
 
 STORE LimitedWords INTO '/home/cloudera/Downloads/PIG_Demo-master/output';
