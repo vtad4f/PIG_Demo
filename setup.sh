@@ -20,7 +20,6 @@ function _PipInstall
       echo "$1 is already pip-installed"
    fi
 }
-_PipInstall starbase
 _PipInstall mock
 
 # download large input file
