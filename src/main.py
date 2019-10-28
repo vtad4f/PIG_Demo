@@ -73,7 +73,7 @@ if __name__ == '__main__':
       BRIEF  Main execution
    """
    Test()
-   # Main('in', 'out')
+   Main('in', 'out')
    
    
    
