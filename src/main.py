@@ -25,13 +25,6 @@ class Col:
    ]
    
    
-def Test():
-   """
-      BRIEF  Test using a smaller movies.txt (just the first 500 lines)
-   """
-   Main('test', 'test')
-   
-   
 def Main(input_dir, output_dir):
    """
       BRIEF  Main is a function so that we can use mock.patch
@@ -67,8 +60,8 @@ if __name__ == '__main__':
    """
       BRIEF  Main execution
    """
-   Test()
-   Main('in', 'out')
+   Main('test', 'test')
+   # Main('in', 'out') # Uncomment once the test works
    
    
    
