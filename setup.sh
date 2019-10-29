@@ -12,15 +12,10 @@ else
    echo "python 2.7.16 is already installed"
 fi
 
-function _PipInstall
-{
-   if ! $(python -c "import $1" 2> /dev/null) ; then
-      python -m pip install $1
-   else
-      echo "$1 is already pip-installed"
-   fi
-}
-_PipInstall mock
+# download pig_util.py
+if [[ ! -f src/pig_util.py ]]; then
+   curl https://svn.apache.org/repos/asf/pig/trunk/src/python/streaming/pig_util.py -o src/pig_util.py
+fi
 
 # download large input file
 if [[ -d in && ! -f in/movies.txt ]]; then

@@ -9,5 +9,7 @@ in/
 out/
 
 # output
-test/movies.csv
+movies.csv
 
+# required for pig udfs
+pig_util.py
