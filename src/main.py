@@ -9,14 +9,9 @@ from reviews import Parse, Review
 from mock import patch
 import csv
 import os
-import re
 import sys
 
 
-class Regex:
-   WORD = re.compile(r'[A-Za-z0-9_-]+', re.MULTILINE)
-   
-   
 class Col:
    ALL = [
       "MovieID" ,
