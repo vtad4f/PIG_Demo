@@ -1,1 +1,1 @@
-LOAD /home/maria_dev/PIG_Demo/test/movies.csv USING org.apache.pig.piggybank.storage.CSVExcelStorage(',', 'YES_MULTILINE') AS (MovieID: chararray, UserID: chararray, UserName: chararray,  Helpful: chararray, Score: chararray, Time: chararray, Summary: chararray, Text: chararray);
+all = LOAD /home/maria_dev/PIG_Demo/test/movies.csv USING org.apache.pig.piggybank.storage.CSVExcelStorage(',', 'YES_MULTILINE') AS (MovieID: chararray, UserID: chararray, UserName: chararray,  Helpful: chararray, Score: chararray, Time: chararray, Summary: chararray, Text: chararray);
