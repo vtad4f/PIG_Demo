@@ -13,4 +13,6 @@ movies.csv
 
 # pig files
 pig_util.py
+*.class
 *.log
+
