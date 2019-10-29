@@ -4,7 +4,7 @@ import re
 
 
 class Regex:
-   WORD = re.compile(r'[A-Za-z0-9_-]+', re.MULTILINE)
+   WORD = re.compile(r'([A-Za-z0-9_-]+)', re.MULTILINE)
    
    
 @outputSchema('number:long')

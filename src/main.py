@@ -35,7 +35,7 @@ def Main(input_dir, output_dir):
    # Populate the csv file by parsing the reviews input file
    with open(output_path, 'wb') as f:
       csv_writer = csv.writer(f)
-      csv_writer.writerow(Col.ALL)
+      # csv_writer.writerow(Col.ALL)
       Parse(input_path, 1000, _AppendReviews, csv_writer)
       
       
