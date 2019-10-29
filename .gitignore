@@ -11,5 +11,6 @@ out/
 # output
 movies.csv
 
-# required for pig udfs
+# pig files
 pig_util.py
+*.log
