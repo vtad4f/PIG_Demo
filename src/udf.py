@@ -16,7 +16,10 @@ def WordCount(string):
 def Ratio(string):
    try:
       num, den = map(float, string.split('/'))
-      return num / den
+      if den:
+         return num / den
+      else:
+         return 0.0
    except TypeError:
       return 0.0
    
