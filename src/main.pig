@@ -21,7 +21,7 @@ dump limited_helpful;
 
 group_by_score = GROUP all_data BY Score;
 aggregate_score = FOREACH group_by_score GENERATE group, COUNT(all_data);
-ordered_score = ORDER aggregate_score BY Score DESC;
+ordered_score = ORDER aggregate_score BY group DESC;
 limited_score = LIMIT ordered_score 10;
 dump limited_score;
 
