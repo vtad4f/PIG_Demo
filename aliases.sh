@@ -13,5 +13,5 @@ function _RunPig
    popd > /dev/null 2>&1
 }
 function test { _RunPig ../test ; }
-function run  { _RunPig .       ; }
+function run  { _RunPig ../out  ; }
 
