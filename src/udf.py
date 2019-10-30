@@ -22,5 +22,14 @@ def Ratio(string):
          return 0.0
    except TypeError:
       return 0.0
-   
-   
+      
+      
+@outputSchema('number:long')
+def Denominator(string):
+   try:
+      num, den = map(int, string.split('/'))
+      return den
+   except TypeError:
+      return 0
+      
+      
