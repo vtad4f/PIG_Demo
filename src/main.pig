@@ -13,8 +13,8 @@ limited_text_word_ct = LIMIT text_word_ct 10;
 dump limited_text_word_ct;
 
 /* Aggregate */
-ordered_by_helpful = ORDER all_data BY Helpful DESC;
-group_by_helpful = GROUP ordered_by_helpful BY Helpful;
+group_by_helpful = GROUP all_data BY Helpful;
 aggregate = FOREACH group_by_helpful GENERATE group, COUNT(all_data);
-limited_aggregate = LIMIT aggregate 10;
-dump limited_aggregate;
+ordered = ORDER aggregate DESC;
+limited_ordered = LIMIT ordered 10;
+dump limited_ordered;
