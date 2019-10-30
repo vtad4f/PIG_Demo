@@ -14,7 +14,7 @@ dump limited_text_word_ct;
 
 /* Aggregate */
 group_by_helpful = GROUP all_data BY Helpful;
-aggregate = FOREACH group_by_helpful GENERATE group, myudf.Ratio(group), COUNT(all_data) AS (group: chararray, ratio: float, ct: long);
-ordered = ORDER aggregate BY ratio DESC;
+aggregate = FOREACH group_by_helpful GENERATE group, myudf.Ratio(group) AS (Ratio: float), COUNT(all_data);
+ordered = ORDER aggregate BY Ratio DESC;
 limited_ordered = LIMIT ordered 10;
 dump limited_ordered;
