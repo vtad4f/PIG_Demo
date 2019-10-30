@@ -14,8 +14,14 @@ dump limited_text_word_ct;
 
 /* Aggregate */
 group_by_helpful = GROUP all_data BY Helpful;
-aggregate = FOREACH group_by_helpful GENERATE group, myudf.Ratio(group) AS (Ratio: double), myudf.Denominator(group) AS (Den: long), COUNT(all_data);
-ordered = ORDER aggregate BY Ratio DESC, Den DESC;
-limited_ordered = LIMIT ordered 10;
-dump limited_ordered;
+aggregate_helpful = FOREACH group_by_helpful GENERATE group, myudf.Ratio(group) AS (Ratio: double), myudf.Denominator(group) AS (Den: long), COUNT(all_data);
+ordered_helpful = ORDER aggregate_helpful BY Ratio DESC, Den DESC;
+limited_helpful = LIMIT ordered_helpful 10;
+dump limited_helpful;
+
+group_by_score = GROUP all_data BY Score;
+aggregate_score = FOREACH group_by_score GENERATE group AS (Score: double), COUNT(all_data);
+ordered_score = ORDER aggregate_score BY Score DESC;
+limited_score = LIMIT ordered_score 10;
+dump limited_score;
 
