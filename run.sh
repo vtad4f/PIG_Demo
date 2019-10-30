@@ -1,9 +1,17 @@
 #!/bin/bash
 
-git fetch
-git checkout -B master origin/master
+function reload
+{
+   git fetch
+   git checkout -B master origin/master
+}
 
-cd src
-echo run main.pig | pig -x local 2> /dev/null
-cd -
+function _RunPig
+{
+   pushd src > /dev/null 2>&1
+   echo run main.pig -param dir=../test | pig -x local # 2> /dev/null
+   popd > /dev/null 2>&1
+}
+function test { _RunPig ../test ; }
+function real { _RunPig .       ; }
 

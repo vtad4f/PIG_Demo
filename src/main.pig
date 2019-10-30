@@ -1,7 +1,7 @@
 
 
 REGISTER 'udf.py' using jython as myudf;
-all_data = LOAD '../test/movies.csv' USING org.apache.pig.piggybank.storage.CSVExcelStorage(',', 'YES_MULTILINE') AS (MovieID: chararray, UserID: chararray, UserName: chararray,  Helpful: chararray, Score: double, Time: chararray, Summary: chararray, Text: chararray);
+all_data = LOAD '$dir/movies.csv' USING org.apache.pig.piggybank.storage.CSVExcelStorage(',', 'YES_MULTILINE') AS (MovieID: chararray, UserID: chararray, UserName: chararray,  Helpful: chararray, Score: double, Time: chararray, Summary: chararray, Text: chararray);
 
 /* Analytics */
 summary_word_ct = FOREACH all_data GENERATE myudf.WordCount(Summary);
