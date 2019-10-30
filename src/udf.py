@@ -12,3 +12,9 @@ def WordCount(string):
    return len(Regex.WORD.findall(string))
    
    
+@outputSchema('number:float')
+def Ratio(string):
+   num, den = string.split('/')
+   return num / float(den)
+   
+   
