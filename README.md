@@ -1,7 +1,7 @@
 
 1. If you want the big input file, run 'mkdir in'
 2. Run './setup.sh' (which will only copy the big file if the 'in' dir exists)
-3. cd into src, then run 'main.py'
+3. cd into src, then run 'python main.py' (to create csv files used by pig)
 4. cd back, then run 'source aliases.sh'
 
 Now, at this point you have 3 aliases at your disposal
