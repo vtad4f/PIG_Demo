@@ -1,5 +1,5 @@
 
-1. If you want the big input file, run 'mkdir in'
+1. If you want the big input file, run 'mkdir in' and 'mkdir out'
 2. Run './setup.sh' (which will only copy the big file if the 'in' dir exists)
 3. cd into src, then run 'python main.py' (to create csv files used by pig)
 4. cd back, then run 'source aliases.sh'
