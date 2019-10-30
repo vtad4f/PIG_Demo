@@ -14,7 +14,10 @@ def WordCount(string):
    
 @outputSchema('number:float')
 def Ratio(string):
-   num, den = string.split('/')
-   return num / float(den)
+   try:
+      num, den = map(float, string.split('/'))
+      return num / den
+   except TypeError:
+      return 0.0
    
    
