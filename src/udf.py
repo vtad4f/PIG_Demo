@@ -12,7 +12,7 @@ def WordCount(string):
    return len(Regex.WORD.findall(string))
    
    
-@outputSchema('number:float')
+@outputSchema('number:double')
 def Ratio(string):
    try:
       num, den = map(float, string.split('/'))
